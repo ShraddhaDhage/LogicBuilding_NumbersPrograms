@@ -1,63 +1,44 @@
-package numbers;
+package Numbers_pgm;
 
 public class MakePrime 
 {
 	public static boolean isPrime(int num)
 	{
-		int den;
-		for(den=2;den<=num;den++)
+		int deno;
+		for( deno=2;deno<=num;deno++)
 		{
-			if(num%den==0)
+			if(num%deno==0)
 			{
 				break;
-			}
+			}	
 		}
-		if(num==den)
+		
+		if(num==deno)
 		{
 			return true;
 		}
 		return false;
+		
 	}
 	
-	public static void makePrime(int num)
-	{
-		int ct=0;
-		for(int i=num+1;;i++ )
-		{
-			if(isPrime(i))
-			{
-				System.out.println("Add"+ ct +" to make it prime");
-				break;
-			}
-			else
-			{
-				++ct;
-			}
-		}
-	}
+	
 	
 	public static void main(String[] args) 
 	{
-		int num=14;
+		int num=23;
 		int ct=0;
-		for(int i=num;;i++)
+		for(int i=num; ;i++)
 		{
-			if(isPrime(i))
+			if(!(isPrime(i)))
 			{
-				if(ct==0)
-				{
-					System.out.println("It is already prime");
-					break;
-				}
-				
-				else
-				{
-					System.out.println("add "+ct +" to make it prime");
-					break;
-				}
-				
+				ct++;
 			}
-			ct++;
+			else 
+			{
+				System.out.println("It is  prime");
+				break;
+			}
 		}
+		System.out.println("to make "+num+" prime add  "+ct);
 	}
 }
